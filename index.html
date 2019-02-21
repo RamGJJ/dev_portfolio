@@ -12,7 +12,122 @@
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+
+
 </head>
+<style type="text/css">
+     body{
+         text-align: center;
+         display: block;
+         margin: 0 auto;
+         font-size: 16px;
+         color: #999;
+     }
+     h1{
+         font-family: 'Oswald', sans-serif;
+         font-size: 30px;
+         color: #216182;
+     }
+     label {
+         display: block;
+         margin-top: 20px;
+         letter-spacing: 2px;
+     }
+     form {
+         margin: 0 auto;
+         width: 459px;
+     }
+     input, textarea {
+         width: 439px;
+         height: 27px;
+         background-color: #efefef;
+         border-radius: 6px;
+         border: 1px solid #dedede;
+         padding: 10px;
+         margin-top: 3px;
+         font-size: 0.9em;
+         color: #3a3a3a;
+     }
+         input:focus, textarea:focus{
+             border: 1px solid #97d6eb;
+         }
+
+     textarea{
+         height: 60px;
+         background-color: #efefef;
+     }
+     #submit{
+         width: 127px;
+         height: 48px;
+         text-align: center;
+         border: none;
+         margin-top: 20px;
+         cursor: pointer;
+     }
+     #submit:hover{
+         color: #fff;
+         background-color: #216282;
+         opacity: 0.9;
+     }
+     #cancel {
+         width: 127px; height: 48px;
+         text-align: center;
+         border: none;
+         margin-top: 20px;
+         cursor: pointer;
+     }
+     #cancel:hover{
+         color: #fff;
+         background-color: #216282;
+         opacity: 0.9;
+     }
+
+    .modal {
+         position: fixed;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(0, 0, 0, 0.5);
+         opacity: 0;
+         visibility: hidden;
+         transform: scale(1.1);
+         transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+         z-index: 4;
+     }
+     .modal-content {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         background-color: white;
+         padding: 1rem 1.5rem;
+         width: 500px;
+         height: 350px;
+         border-radius: 0.5rem;
+         z-index: 5;
+     }
+     .close-button {
+         float: right;
+         width: 1.5rem;
+         line-height: 1.5rem;
+         text-align: center;
+         cursor: pointer;
+         border-radius: 0.25rem;
+         background-color: lightgray;
+     }
+     .close-button:hover {
+         background-color: darkgray;
+     }
+     .show-modal {
+         opacity: 1;
+         visibility: visible;
+         transform: scale(1.0);
+         transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+     }
+
+</style>
+
 
 <body>
     <div id="mobile-menu-open" class="shadow-large">
@@ -28,10 +143,10 @@
                 <a href="#about">About</a>
             </li>
             <li>
-                <a href="#experience">Experience</a>
+                <a href="#experience">학력사항</a>
             </li>
             <li>
-                <a href="#education">Education</a>
+                <a href="#education">병역</a>
             </li>
             <li>
                 <a href="#projects">Projects</a>
@@ -109,42 +224,58 @@
 
     <div id="education">
         <h2 class="heading">병역</h2>
-        <div class="education-block">
-            <h3>한국외국어대학교</h3>
-            <span class="education-date">12.03 - 19.02</span>
-            <h4>전공 : 컴퓨터공학과</h4>
-            <p>
-                학점: 3.6/4.5<br>
-            </p>
-        </div>
-        <!-- End .education-block -->
+
 
         <div class="education-block">
-            <table style:"border:1px solid">
+            <table >
             <tr>
-              <td>a</td>
-              <td>b</td>
+              <td colspan="2" style="width:40%;"><strong>제대구분</strong></td>
+              <td colspan="1">필</td>
+            </tr>
+            <tr>
+              <td colspan="1"><strong>군별</strong></td>
+              <td colspan="1"><strong>최종계급</strong></td>
+              <td colspan="1"><strong>복무기간</strong></td>
+            </tr>
+            <tr>
+              <td colspan="1">육군</td>
+              <td colspan="1">병장</td>
+              <td colspan="1">13.12 - 15.9</td>
             </tr>
             </table>
 
-            <h3>대영고등학교</h3>
-            <span class="education-date">09.03 - 12.02</span>
-            <h4>서울</h4>
-            <!-- <ul>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-            </ul> -->
+
+
         </div>
         <!-- End .education-block -->
     </div>
     <!-- End #education -->
+
+    <!-- <div class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h1 class="title">메일 보내기</h1>
+                <form action="#post.php" method="POST">
+                  <label for="email">Email</label>
+                  <input type="email" name="email" placeholder="Your email" required="required">
+                  <label></label>
+                  <textarea name="message" placeholder="Test Message" required="required"></textarea>
+                  <input type="button" id="cancel" value="취소">
+                  <input type="submit" id="submit" value="보내기">
+                </form>
+            </div>
+      </div>   -->
+
+      <div class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                      <video src="video/final.avi" autoplay controls width="100%" >
+                      <input type="button" id="cancel" value="취소">
+                      <!-- <input type="submit" id="submit" value="보내기"> -->
+                    </form>
+                </div>
+          </div>
+
 
     <div id="projects" class="background-alt">
         <h2 class="heading">Projects</h2>
@@ -152,18 +283,19 @@
             <div class="row">
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/project.jpg" />
+                        <img src="images/project1.jpg" style="max-width:300px;"/>
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
                         <h3>문서 내 테이블데이터 차트 변환 프로그램</h3>
-                        <p>
-                          <a href="https://github.com/RamGJJ/pdf-convert-chart">Source Code</a>
-                        </p>
+
                         <p>
                           오픈소스 개발 프로젝트로써 pdf.js와 d3.js를 사용합니다. pdf내의 테이블 데이터를 추출하여 d3에서 사용하기 위해 특정한 형태로 parsing한다. svg형태의 chart를 도식화하여 사용자에게 유의미한 데이터를 제공하여 준다.
                         </p>
-                        <a href="#">View Project</a>
+                        <a href="https://github.com/RamGJJ/pdf-convert-chart" target="_blank" style="margin-right:10px">Source Code</a>
+                        <!-- <a href="#" style="margin-left:10px">Demo</a> -->
+                        <button class="trigger">Demo</button>
+
                     </div>
                     <!-- End .project-info -->
                 </div>
@@ -171,19 +303,18 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/project.jpg" />
+                        <img src="images/project2.jpg" />
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
                         <h3>모바일 카메라를 이용한 객체인식 프로그램</h3>
-                        <p>
-                          <a href="https://github.com/RamGJJ/Yolo">Source Code</a>
-                        </p>
+
                         <p>
                             yolov3를 사용하는 오픈소스 프로젝트입니다. 모바일 카메라를 이용한 사물인식 프로그램이며, rtmp를 이용하여 모바일 카메라로부터 영상을 서버로 전송받습니다. 사용자별 특정 port로 전송받은 영상을 darknet 프레임워크에서 인식된 객체의 b-box를 그려 웹서버로 송출합니다.
                             이 프로그램은 웹을 인터페이스로 사용함으로써 그래픽자원의 공유가 가능합니다.
                         </p>
-                        <a href="#">View Project</a>
+                        <a href="https://github.com/RamGJJ/Yolo" target="_blank" style="margin-right:10px">Source Code</a>
+                        <a href="#" style="margin-left:10px">Demo</a>
                     </div>
                     <!-- End .project-info -->
                 </div>
@@ -191,18 +322,17 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/project.jpg" />
+                        <img src="images/project3.jpg" />
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
                         <h3>삼성 육목 AI 경진대회</h3>
-                        <p>
-                          <a href="https://github.com/RamGJJ/conntected_6_stones">Source Code</a>
-                        </p>
+
                         <p>
                            Standard Input/Output을 이용한 육목 게임 프로젝트이며, 삼성에서 제공한 프레임워크 위에서 동작할 알고리즘을 프로그래밍 하였습니다. 돌을 놓을경우 각 Stone의 객체가 할당되며 Stone의 주위 8방에 가중치가 부여됩니다. 이 가중치를 활용하여 최적의 수를 찾아내는 프로그램입니다.
                         </p>
-                        <a href="#">View Project</a>
+                        <a href="https://github.com/RamGJJ/conntected_6_stones" target="_blank" style="margin-right:10px">Source Code</a>
+                        <a href="#" style="margin-left:10px">Demo</a>
                     </div>
                     <!-- End .project-info -->
                 </div>
@@ -279,6 +409,30 @@
         </div>
     </footer>
     <!-- End footer -->
+    <script type="text/javascript">
+             var modal = document.querySelector(".modal");
+             var trigger = document.querySelector(".trigger");
+             var closeButton = document.querySelector(".close-button");
+             var cancelButton = document.querySelector("#cancel");
+
+            //console.log(modal);
+
+            function toggleModal() {
+                 modal.classList.toggle("show-modal");
+             }
+
+            function windowOnClick(event) {
+                 if (event.target === modal) {
+                     toggleModal();
+                 }
+             }
+
+            trigger.addEventListener("click", toggleModal);
+             closeButton.addEventListener("click", toggleModal);
+             cancel.addEventListener("click", toggleModal);
+             window.addEventListener("click", windowOnClick);
+         </script>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/scripts.min.js"></script>
